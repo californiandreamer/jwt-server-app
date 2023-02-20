@@ -34,8 +34,8 @@ const generateAccessToken = user => {
 const generateRefreshToken = user => {
   const refreshToken = jwt.sign(
     { id: user.id, isAdmin: user.isAdmin },
-    'refreshSecretKey',
-    { expiresIn: '15m' },
+    'secretKey',
+    { expiresIn: '59m' },
   );
 
   return refreshToken;
